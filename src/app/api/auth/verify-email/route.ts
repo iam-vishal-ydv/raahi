@@ -3,7 +3,6 @@ import User from "@/models/user.model";
 
 export async function POST(req: NextRequest) {
   const { email, otp } = await req.json();
-
   if (!email || !otp) {
     return NextResponse.json(
       { message: "Email and OTP are required" },
@@ -29,9 +28,7 @@ export async function POST(req: NextRequest) {
   user.isEmailVerified = true;
   user.otp = null;
   user.otpExpiresAt = null;
-
   await user.save();
-
   return NextResponse.json(
     { message: "OTP verified successfully" },
     { status: 200 },

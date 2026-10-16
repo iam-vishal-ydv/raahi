@@ -1,6 +1,6 @@
 import mongoose, { Document } from "mongoose";
 
-interface User extends Document {
+export interface User extends Document {
   name: string;
   email: string;
   role: "user" | "patner" | "admin";

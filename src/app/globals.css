@@ -1,101 +1,142 @@
 @import "tailwindcss";
 
 /* =========================================================
-   RAAHI — GLOBAL DESIGN SYSTEM
-   Mobility Platform
-   Bike • Auto • Car • Rental
-   ========================================================= */
-
-/* =========================================================
-   1. DESIGN TOKENS
+   RAAHI — PREMIUM MOBILITY DESIGN SYSTEM
+   Uber × Ola × Rapido Inspired
    ========================================================= */
 
 :root {
-  --raahi-primary: #2563eb;
-  --raahi-primary-hover: #1d4ed8;
-  --raahi-primary-active: #1e40af;
+  /* =======================================================
+     BRAND
+     ======================================================= */
 
-  --raahi-navy: #0b1220;
-  --raahi-navy-light: #111827;
+  --raahi-primary: #c8ff00;
+  --raahi-primary-hover: #b8ef00;
+  --raahi-primary-active: #a8df00;
 
-  --raahi-blue-light: #eff6ff;
+  --raahi-primary-soft: rgba(200, 255, 0, 0.12);
+  --raahi-primary-glow: rgba(200, 255, 0, 0.18);
 
-  /* ---------- Background ---------- */
+  /* =======================================================
+     BLACK / WHITE
+     ======================================================= */
 
-  --raahi-background: #f6f8fc;
+  --raahi-black: #080808;
+  --raahi-black-soft: #111111;
+  --raahi-black-light: #181818;
+
+  --raahi-white: #ffffff;
+  --raahi-off-white: #fafafa;
+
+  /* =======================================================
+     BACKGROUND
+     ======================================================= */
+
+  --raahi-background: #f4f4f1;
   --raahi-surface: #ffffff;
-  --raahi-surface-secondary: #f8fafc;
-  --raahi-surface-hover: #f1f5f9;
+  --raahi-surface-secondary: #f8f8f6;
+  --raahi-surface-hover: #eeeeeb;
 
-  /* ---------- Text ---------- */
+  /* =======================================================
+     GLASS
+     ======================================================= */
 
-  --raahi-text: #111827;
-  --raahi-text-secondary: #475467;
-  --raahi-text-muted: #667085;
-  --raahi-text-light: #98a2b3;
+  --raahi-glass-light: rgba(255, 255, 255, 0.72);
+  --raahi-glass: rgba(255, 255, 255, 0.58);
+  --raahi-glass-dark: rgba(10, 10, 10, 0.72);
+  --raahi-glass-heavy: rgba(5, 5, 5, 0.88);
+
+  /* =======================================================
+     TEXT
+     ======================================================= */
+
+  --raahi-text: #111111;
+  --raahi-text-secondary: #454545;
+  --raahi-text-muted: #737373;
+  --raahi-text-light: #a0a0a0;
   --raahi-text-white: #ffffff;
 
-  /* ---------- Border ---------- */
+  /* =======================================================
+     BORDER
+     ======================================================= */
 
-  --raahi-border: #e4e7ec;
-  --raahi-border-light: #eef0f3;
-  --raahi-border-dark: #d0d5dd;
+  --raahi-border: #e2e2df;
+  --raahi-border-light: #eeeeeb;
+  --raahi-border-dark: #ccccca;
 
-  /* ---------- Status ---------- */
+  --raahi-border-glass: rgba(255, 255, 255, 0.2);
+  --raahi-border-dark-glass: rgba(0, 0, 0, 0.12);
 
-  --raahi-success: #16a34a;
-  --raahi-success-light: #f0fdf4;
+  /* =======================================================
+     STATUS
+     ======================================================= */
 
-  --raahi-warning: #f59e0b;
-  --raahi-warning-light: #fffbeb;
+  --raahi-success: #1f8f4c;
+  --raahi-success-light: #edf8f1;
 
-  --raahi-danger: #dc2626;
-  --raahi-danger-light: #fef2f2;
+  --raahi-warning: #9a6700;
+  --raahi-warning-light: #fff8df;
 
-  --raahi-info: #0284c7;
-  --raahi-info-light: #f0f9ff;
+  --raahi-danger: #d93636;
+  --raahi-danger-light: #fff0f0;
 
-  /* ---------- Radius ---------- */
+  --raahi-info: #2563eb;
+  --raahi-info-light: #eff5ff;
+
+  /* =======================================================
+     RADIUS
+     ======================================================= */
 
   --radius-xs: 6px;
-  --radius-sm: 8px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-xl: 16px;
-  --radius-2xl: 20px;
-  --radius-3xl: 24px;
+  --radius-sm: 9px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 26px;
+  --radius-3xl: 32px;
 
-  /* ---------- Shadows ---------- */
+  /* =======================================================
+     SHADOWS
+     ======================================================= */
 
-  --shadow-xs: 0 1px 2px rgb(16 24 40 / 4%);
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.06);
 
-  --shadow-sm: 0 1px 3px rgb(16 24 40 / 6%), 0 1px 2px rgb(16 24 40 / 4%);
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.08);
 
-  --shadow-md: 0 4px 12px rgb(16 24 40 / 8%);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
 
-  --shadow-lg: 0 10px 30px rgb(16 24 40 / 10%);
+  --shadow-lg: 0 18px 45px rgba(0, 0, 0, 0.14);
 
-  --shadow-xl: 0 20px 45px rgb(16 24 40 / 14%);
+  --shadow-xl: 0 25px 70px rgba(0, 0, 0, 0.2);
 
-  /* ---------- Transitions ---------- */
+  /* =======================================================
+     GLASS SHADOW
+     ======================================================= */
+
+  --glass-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 12px 35px rgba(0, 0, 0, 0.1);
+
+  /* =======================================================
+     LAYOUT
+     ======================================================= */
+
+  --header-height: 68px;
+  --sidebar-width: 260px;
+
+  /* =======================================================
+     TRANSITIONS
+     ======================================================= */
 
   --transition-fast: 150ms ease;
-  --transition-normal: 200ms ease;
-  --transition-slow: 300ms ease;
-
-  /* ---------- Layout ---------- */
-
-  --header-height: 64px;
-  --sidebar-width: 250px;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
 }
 
 /* =========================================================
-   2. BASE / RESET
+   GLOBAL
    ========================================================= */
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
 
@@ -107,99 +148,40 @@ html,
 body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
 }
 
 body {
   min-height: 100vh;
 
-  background: var(--raahi-background);
   color: var(--raahi-text);
 
-  font-family:
-    "Plus Jakarta Sans",
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(200, 255, 0, 0.055),
+      transparent 28%
+    ),
+    radial-gradient(circle at 90% 90%, rgba(0, 0, 0, 0.035), transparent 30%),
+    var(--raahi-background);
 
-  font-size: 14px;
-  line-height: 1.5;
+  font-family: var(--font-manrope), Manrope, Arial, sans-serif;
 
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Remove default heading margins */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  color: var(--raahi-text);
-  font-weight: 700;
-}
-
-/* Paragraph */
-
-p {
-  margin: 0;
-}
-
-/* Links */
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Buttons */
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Button reset */
-
-button {
-  border: 0;
-  cursor: pointer;
-}
-
-/* Images */
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-/* Lists */
-
-ul,
-ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  text-rendering: optimizeLegibility;
 }
 
 /* =========================================================
-   3. TEXT SELECTION
+   SELECTION
    ========================================================= */
 
 ::selection {
-  background: #dbeafe;
-  color: #1e3a8a;
+  background: var(--raahi-primary);
+  color: #000000;
 }
 
 /* =========================================================
-   4. SCROLLBAR
+   SCROLLBAR
    ========================================================= */
 
 ::-webkit-scrollbar {
@@ -212,45 +194,48 @@ ol {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #cfcfcb;
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #aaaaa5;
 }
 
 /* =========================================================
-   5. FOCUS
+   FOCUS
    ========================================================= */
 
 :focus-visible {
-  outline: 3px solid rgb(37 99 235 / 20%);
-  outline-offset: 2px;
+  outline: 2px solid var(--raahi-primary);
+  outline-offset: 3px;
 }
 
 /* =========================================================
-   6. TYPOGRAPHY
+   TYPOGRAPHY
    ========================================================= */
 
 .raahi-page-title {
-  font-size: 28px;
-  line-height: 1.25;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -0.035em;
+  color: #101010;
 }
 
 .raahi-section-title {
-  font-size: 20px;
+  font-size: 21px;
   line-height: 1.35;
   font-weight: 700;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
+  color: #111111;
 }
 
 .raahi-card-title {
   font-size: 16px;
   line-height: 1.4;
-  font-weight: 600;
+  font-weight: 650;
+  color: #111111;
 }
 
 .raahi-body {
@@ -266,7 +251,7 @@ ol {
 }
 
 /* =========================================================
-   7. INPUTS
+   INPUTS
    ========================================================= */
 
 .raahi-input,
@@ -275,12 +260,17 @@ ol {
   width: 100%;
 
   border: 1px solid var(--raahi-border);
+
   border-radius: var(--radius-md);
 
-  background: var(--raahi-surface);
-  color: var(--raahi-text);
+  background: rgba(255, 255, 255, 0.82);
+
+  color: #111111;
 
   outline: none;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
   transition:
     border-color var(--transition-normal),
@@ -302,49 +292,45 @@ ol {
 
 .raahi-input::placeholder,
 .raahi-textarea::placeholder {
-  color: var(--raahi-text-light);
+  color: #999999;
 }
-
-/* Hover */
 
 .raahi-input:hover,
 .raahi-select:hover,
 .raahi-textarea:hover {
-  border-color: var(--raahi-border-dark);
+  border-color: #bdbdb8;
 }
-
-/* Focus */
 
 .raahi-input:focus,
 .raahi-select:focus,
 .raahi-textarea:focus {
-  border-color: var(--raahi-primary);
+  border-color: #111111;
 
-  box-shadow: 0 0 0 3px rgb(37 99 235 / 10%);
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 0, 0, 0.06),
+    0 5px 15px rgba(0, 0, 0, 0.05);
 }
-
-/* Disabled */
 
 .raahi-input:disabled,
 .raahi-select:disabled,
 .raahi-textarea:disabled {
-  background: #f2f4f7;
-  color: var(--raahi-text-light);
+  background: #eeeeeb;
+  color: #999999;
   cursor: not-allowed;
 }
-
-/* Error */
 
 .raahi-input.error,
 .raahi-select.error,
 .raahi-textarea.error {
   border-color: var(--raahi-danger);
 
-  box-shadow: 0 0 0 3px rgb(220 38 38 / 8%);
+  box-shadow: 0 0 0 3px rgba(217, 54, 54, 0.08);
 }
 
 /* =========================================================
-   8. SEARCH INPUT
+   SEARCH
    ========================================================= */
 
 .raahi-search {
@@ -352,312 +338,523 @@ ol {
 }
 
 .raahi-search input {
-  width: 100%;
-  height: 48px;
-
-  padding: 0 16px 0 44px;
-
-  border: 1px solid var(--raahi-border);
-  border-radius: var(--radius-lg);
-
-  background: var(--raahi-surface);
-
-  outline: none;
-
-  transition: var(--transition-normal);
+  padding-left: 44px;
 }
 
-.raahi-search input:focus {
-  border-color: var(--raahi-primary);
+.raahi-search-icon {
+  position: absolute;
 
-  box-shadow: 0 0 0 3px rgb(37 99 235 / 10%);
+  left: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #777777;
+
+  pointer-events: none;
 }
 
 /* =========================================================
-   9. BUTTONS
+   LOCATION INPUT
+   ========================================================= */
+
+.raahi-location-input {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 56px;
+
+  padding: 0 15px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(255, 255, 255, 0.68)
+  );
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  border-radius: var(--radius-lg);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 8px 25px rgba(0, 0, 0, 0.07);
+
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+.raahi-location-input:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.raahi-location-input:focus-within {
+  border-color: #111111;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 0, 0, 0.05),
+    0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   BUTTON BASE
    ========================================================= */
 
 .raahi-btn {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
+
   gap: 8px;
 
-  min-height: 44px;
-  padding: 0 18px;
+  min-height: 43px;
+
+  padding: 0 17px;
+
+  border: 1px solid transparent;
 
   border-radius: var(--radius-md);
 
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
 
-  transition:
-    background var(--transition-fast),
-    border-color var(--transition-fast),
-    color var(--transition-fast),
-    transform var(--transition-fast),
-    box-shadow var(--transition-fast);
+  font-weight: 700;
+
+  cursor: pointer;
 
   user-select: none;
+
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-normal),
+    border-color var(--transition-normal),
+    color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.raahi-btn:hover {
+  transform: translateY(-1px);
 }
 
 .raahi-btn:active {
   transform: scale(0.98);
 }
 
-/* Primary */
+/* =========================================================
+   PRIMARY — RAahi LIME
+   ========================================================= */
 
 .raahi-btn-primary {
   background: var(--raahi-primary);
-  color: #ffffff;
+
+  color: #080808;
+
+  border-color: var(--raahi-primary);
+
+  box-shadow: 0 6px 20px rgba(200, 255, 0, 0.14);
 }
 
 .raahi-btn-primary:hover {
   background: var(--raahi-primary-hover);
+
+  box-shadow: 0 10px 28px rgba(200, 255, 0, 0.2);
 }
 
 .raahi-btn-primary:active {
   background: var(--raahi-primary-active);
 }
 
-/* Navy */
+/* =========================================================
+   DARK BUTTON
+   ========================================================= */
 
 .raahi-btn-dark {
-  background: var(--raahi-navy);
+  background: #080808;
+
   color: #ffffff;
+
+  border-color: #080808;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .raahi-btn-dark:hover {
-  background: #1f2937;
+  background: #1a1a1a;
+
+  border-color: #1a1a1a;
 }
 
-/* Secondary */
+/* =========================================================
+   SECONDARY
+   ========================================================= */
 
 .raahi-btn-secondary {
-  background: #ffffff;
-  color: var(--raahi-text);
+  background: rgba(255, 255, 255, 0.75);
 
-  border: 1px solid var(--raahi-border);
+  color: #111111;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 
 .raahi-btn-secondary:hover {
-  background: var(--raahi-surface-hover);
-  border-color: var(--raahi-border-dark);
+  background: #ffffff;
+
+  border-color: rgba(0, 0, 0, 0.2);
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
 }
 
-/* Ghost */
+/* =========================================================
+   GHOST
+   ========================================================= */
 
 .raahi-btn-ghost {
   background: transparent;
-  color: var(--raahi-text-secondary);
+
+  color: #555555;
 }
 
 .raahi-btn-ghost:hover {
-  background: var(--raahi-surface-hover);
-  color: var(--raahi-text);
+  background: rgba(0, 0, 0, 0.05);
+
+  color: #111111;
 }
 
-/* Danger */
+/* =========================================================
+   DANGER
+   ========================================================= */
 
 .raahi-btn-danger {
-  background: var(--raahi-danger);
+  background: #111111;
+
   color: #ffffff;
+
+  border-color: #111111;
 }
 
 .raahi-btn-danger:hover {
-  background: #b91c1c;
+  background: #2a2a2a;
 }
 
-/* Disabled */
+/* =========================================================
+   DISABLED
+   ========================================================= */
 
 .raahi-btn:disabled {
-  opacity: 0.55;
+  opacity: 0.45;
+
   cursor: not-allowed;
+
   transform: none;
+
+  box-shadow: none;
 }
 
-/* Full width */
+/* =========================================================
+   FULL WIDTH
+   ========================================================= */
 
 .raahi-btn-full {
   width: 100%;
 }
 
 /* =========================================================
-   10. CARDS
+   CARDS
    ========================================================= */
 
 .raahi-card {
-  background: var(--raahi-surface);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.82),
+    rgba(255, 255, 255, 0.58)
+  );
 
-  border: 1px solid var(--raahi-border);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 
   border-radius: var(--radius-xl);
 
-  box-shadow: var(--shadow-xs);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  box-shadow: var(--glass-shadow);
 }
 
 .raahi-card-hover {
   transition:
     transform var(--transition-normal),
     box-shadow var(--transition-normal),
-    border-color var(--transition-normal);
+    border-color var(--transition-normal),
+    background var(--transition-normal);
 }
 
 .raahi-card-hover:hover {
-  border-color: #d0d5dd;
+  border-color: rgba(0, 0, 0, 0.16);
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.72)
+  );
+
   box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
+
+  transform: translateY(-2px);
 }
 
 /* =========================================================
-   11. RIDE CARD
+   RIDE CARD
    ========================================================= */
 
 .raahi-ride-card {
+  position: relative;
+
   padding: 16px;
 
-  background: var(--raahi-surface);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.64)
+  );
 
-  border: 1px solid var(--raahi-border);
+  border: 1px solid rgba(0, 0, 0, 0.09);
 
   border-radius: var(--radius-lg);
 
   cursor: pointer;
 
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
   transition:
     border-color var(--transition-normal),
     background var(--transition-normal),
-    box-shadow var(--transition-normal);
+    box-shadow var(--transition-normal),
+    transform var(--transition-normal);
 }
 
 .raahi-ride-card:hover {
-  border-color: #bfdbfe;
-  box-shadow: var(--shadow-sm);
+  border-color: rgba(0, 0, 0, 0.18);
+
+  background: #ffffff;
+
+  box-shadow: var(--shadow-md);
+
+  transform: translateY(-2px);
 }
 
 .raahi-ride-card.active {
-  background: var(--raahi-blue-light);
-  border-color: var(--raahi-primary);
+  background: linear-gradient(
+    135deg,
+    rgba(200, 255, 0, 0.22),
+    rgba(255, 255, 255, 0.8)
+  );
 
-  box-shadow: 0 0 0 1px var(--raahi-primary);
+  border-color: rgba(130, 165, 0, 0.65);
+
+  box-shadow:
+    0 0 0 2px rgba(200, 255, 0, 0.18),
+    0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 /* =========================================================
-   12. BADGES
+   RIDE TYPE ACTIVE INDICATOR
+   ========================================================= */
+
+.raahi-ride-card.active::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+
+  width: 4px;
+
+  border-radius: 0 6px 6px 0;
+
+  background: var(--raahi-primary);
+}
+
+/* =========================================================
+   BADGES
    ========================================================= */
 
 .raahi-badge {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
   min-height: 24px;
+
   padding: 0 9px;
 
   border-radius: 999px;
 
   font-size: 11px;
-  font-weight: 600;
+
+  font-weight: 700;
+
+  background: #eeeeeb;
+
+  color: #333333;
+
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .raahi-badge-success {
   background: var(--raahi-success-light);
-  color: #15803d;
+  color: var(--raahi-success);
 }
 
 .raahi-badge-warning {
   background: var(--raahi-warning-light);
-  color: #b45309;
+  color: var(--raahi-warning);
 }
 
 .raahi-badge-danger {
   background: var(--raahi-danger-light);
-  color: #b91c1c;
+  color: var(--raahi-danger);
 }
 
 .raahi-badge-info {
   background: var(--raahi-info-light);
-  color: #0369a1;
+  color: var(--raahi-info);
 }
 
 .raahi-badge-primary {
-  background: var(--raahi-blue-light);
-  color: #1d4ed8;
+  background: var(--raahi-primary-soft);
+  color: #536900;
 }
 
 /* =========================================================
-   13. AVATAR
+   AVATAR
    ========================================================= */
 
 .raahi-avatar {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
   overflow: hidden;
 
-  background: #e2e8f0;
-  color: var(--raahi-text-secondary);
+  background: linear-gradient(135deg, #171717, #414141);
+
+  color: #ffffff;
 
   border-radius: 50%;
 
-  font-weight: 600;
+  font-weight: 700;
+
+  border: 2px solid #ffffff;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .raahi-avatar-sm {
   width: 32px;
   height: 32px;
+
   font-size: 12px;
 }
 
 .raahi-avatar-md {
   width: 40px;
   height: 40px;
+
   font-size: 14px;
 }
 
 .raahi-avatar-lg {
   width: 48px;
   height: 48px;
+
   font-size: 16px;
 }
 
 /* =========================================================
-   14. DIVIDER
+   DIVIDER
    ========================================================= */
 
 .raahi-divider {
   width: 100%;
+
   height: 1px;
-  background: var(--raahi-border);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.1),
+    transparent
+  );
 }
 
 /* =========================================================
-   15. MODAL / OVERLAY
+   MODAL / OVERLAY
    ========================================================= */
 
 .raahi-overlay {
   position: fixed;
+
   inset: 0;
+
   z-index: 50;
 
-  background: rgb(11 18 32 / 45%);
+  background: rgba(0, 0, 0, 0.62);
 
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .raahi-modal {
   width: min(100% - 32px, 520px);
 
-  background: var(--raahi-surface);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(240, 240, 237, 0.9)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
 
   border-radius: var(--radius-2xl);
+
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
 
   box-shadow: var(--shadow-xl);
 }
 
 /* =========================================================
-   16. DROPDOWN
+   DARK MODAL
+   ========================================================= */
+
+.raahi-modal-dark {
+  background: linear-gradient(
+    135deg,
+    rgba(25, 25, 25, 0.96),
+    rgba(8, 8, 8, 0.94)
+  );
+
+  color: #ffffff;
+
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================================
+   DROPDOWN
    ========================================================= */
 
 .raahi-dropdown {
@@ -665,29 +862,38 @@ ol {
 
   padding: 6px;
 
-  background: var(--raahi-surface);
+  background: rgba(255, 255, 255, 0.92);
 
-  border: 1px solid var(--raahi-border);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
   border-radius: var(--radius-lg);
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
 
   box-shadow: var(--shadow-lg);
 }
 
 .raahi-dropdown-item {
   display: flex;
+
   align-items: center;
+
   gap: 10px;
 
   width: 100%;
 
   padding: 10px 12px;
 
+  border: 0;
+
   border-radius: var(--radius-sm);
 
-  color: var(--raahi-text-secondary);
+  color: #555555;
 
   font-size: 13px;
+
+  background: transparent;
 
   transition:
     background var(--transition-fast),
@@ -695,86 +901,141 @@ ol {
 }
 
 .raahi-dropdown-item:hover {
-  background: var(--raahi-surface-hover);
-  color: var(--raahi-text);
+  background: #f0f0ed;
+
+  color: #111111;
 }
 
 /* =========================================================
-   17. HEADER
+   HEADER
    ========================================================= */
 
 .raahi-header {
   height: var(--header-height);
 
   display: flex;
+
   align-items: center;
 
-  background: var(--raahi-surface);
+  background: rgba(255, 255, 255, 0.82);
 
-  border-bottom: 1px solid var(--raahi-border);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+
+  position: relative;
+
+  z-index: 30;
 }
 
 /* =========================================================
-   18. SIDEBAR
+   DARK HEADER
+   ========================================================= */
+
+.raahi-header-dark {
+  background: rgba(8, 8, 8, 0.88);
+
+  color: #ffffff;
+
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   SIDEBAR
    ========================================================= */
 
 .raahi-sidebar {
   width: var(--sidebar-width);
 
-  background: var(--raahi-navy);
+  background: linear-gradient(180deg, #0b0b0b, #050505);
 
   color: #ffffff;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
 }
 
 .raahi-sidebar-item {
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 
   width: 100%;
 
   padding: 11px 14px;
 
+  border: 1px solid transparent;
+
   border-radius: var(--radius-md);
 
-  color: #cbd5e1;
+  color: #999999;
 
   font-size: 13px;
-  font-weight: 500;
+
+  font-weight: 550;
+
+  background: transparent;
 
   transition:
     background var(--transition-fast),
-    color var(--transition-fast);
+    color var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .raahi-sidebar-item:hover {
-  background: rgb(255 255 255 / 7%);
+  background: rgba(255, 255, 255, 0.06);
+
   color: #ffffff;
+
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 .raahi-sidebar-item.active {
-  background: var(--raahi-primary);
-  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    rgba(200, 255, 0, 0.18),
+    rgba(200, 255, 0, 0.05)
+  );
+
+  color: var(--raahi-primary);
+
+  border-color: rgba(200, 255, 0, 0.18);
+
+  box-shadow: inset 3px 0 0 var(--raahi-primary);
 }
 
 /* =========================================================
-   19. MAP CONTAINER
+   MAP
    ========================================================= */
 
 .raahi-map {
   position: relative;
 
   width: 100%;
+
   min-height: 400px;
 
   overflow: hidden;
 
-  background: #e5e7eb;
+  background: linear-gradient(135deg, #d9d9d4, #eeeeeb);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
 
   border-radius: var(--radius-xl);
+
+  box-shadow: var(--shadow-md);
 }
 
-/* Floating map panel */
+/* =========================================================
+   MAP PANEL
+   ========================================================= */
 
 .raahi-map-panel {
   position: absolute;
@@ -786,119 +1047,98 @@ ol {
 
   padding: 16px;
 
-  background: rgb(255 255 255 / 96%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.66)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
 
   border-radius: var(--radius-xl);
 
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
   box-shadow: var(--shadow-lg);
-
-  backdrop-filter: blur(10px);
 }
 
 /* =========================================================
-   20. LOCATION INPUT
+   MAP DARK PANEL
    ========================================================= */
 
-.raahi-location-input {
+.raahi-map-panel-dark {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 15, 0.92),
+    rgba(5, 5, 5, 0.8)
+  );
+
+  color: #ffffff;
+
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================================
+   MAP MARKER
+   ========================================================= */
+
+.raahi-map-marker {
   display: flex;
+
   align-items: center;
-  gap: 12px;
 
-  min-height: 48px;
+  justify-content: center;
 
-  padding: 8px 12px;
+  width: 38px;
 
-  background: #ffffff;
-
-  border: 1px solid var(--raahi-border);
-
-  border-radius: var(--radius-md);
-
-  transition: var(--transition-normal);
-}
-
-.raahi-location-input:focus-within {
-  border-color: var(--raahi-primary);
-
-  box-shadow: 0 0 0 3px rgb(37 99 235 / 10%);
-}
-
-/* =========================================================
-   21. LOADING
-   ========================================================= */
-
-.raahi-spinner {
-  width: 20px;
-  height: 20px;
-
-  border: 2px solid #dbeafe;
-  border-top-color: var(--raahi-primary);
+  height: 38px;
 
   border-radius: 50%;
 
-  animation: raahi-spin 0.7s linear infinite;
-}
+  background: var(--raahi-primary);
 
-@keyframes raahi-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
+  color: #000000;
 
-/* =========================================================
-   22. SKELETON
-   ========================================================= */
+  border: 4px solid #ffffff;
 
-.raahi-skeleton {
-  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 37%, #f1f5f9 63%);
-
-  background-size: 400% 100%;
-
-  animation: raahi-skeleton 1.4s ease infinite;
-
-  border-radius: var(--radius-sm);
-}
-
-@keyframes raahi-skeleton {
-  0% {
-    background-position: 100% 0;
-  }
-
-  100% {
-    background-position: -100% 0;
-  }
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
 /* =========================================================
-   23. TOAST / NOTIFICATION
+   TOAST
    ========================================================= */
 
 .raahi-toast {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 15, 0.94),
+    rgba(30, 30, 30, 0.88)
+  );
 
-  min-width: 300px;
+  color: #ffffff;
 
-  padding: 14px 16px;
-
-  background: #ffffff;
-
-  border: 1px solid var(--raahi-border);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
   border-radius: var(--radius-lg);
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
 
   box-shadow: var(--shadow-lg);
 }
 
 /* =========================================================
-   24. EMPTY STATE
+   EMPTY STATE
    ========================================================= */
 
 .raahi-empty {
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
 
   min-height: 280px;
@@ -911,7 +1151,7 @@ ol {
 }
 
 /* =========================================================
-   25. ERROR MESSAGE
+   ERROR
    ========================================================= */
 
 .raahi-error-text {
@@ -920,11 +1160,12 @@ ol {
   color: var(--raahi-danger);
 
   font-size: 12px;
-  font-weight: 500;
+
+  font-weight: 600;
 }
 
 /* =========================================================
-   26. SUCCESS MESSAGE
+   SUCCESS
    ========================================================= */
 
 .raahi-success-text {
@@ -933,58 +1174,361 @@ ol {
   color: var(--raahi-success);
 
   font-size: 12px;
-  font-weight: 500;
+
+  font-weight: 600;
 }
 
 /* =========================================================
-   27. PRICE
+   PRICE
    ========================================================= */
 
 .raahi-price {
-  color: var(--raahi-text);
+  color: #111111;
 
   font-size: 18px;
-  font-weight: 700;
 
-  letter-spacing: -0.02em;
+  font-weight: 750;
+
+  letter-spacing: -0.025em;
 }
 
 .raahi-price-large {
   font-size: 28px;
-  font-weight: 700;
+
+  font-weight: 750;
+
+  letter-spacing: -0.035em;
 }
 
 /* =========================================================
-   28. LOGO
+   LOGO
    ========================================================= */
 
 .raahi-logo {
-  color: var(--raahi-navy);
+  color: #111111;
 
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 23px;
 
-  letter-spacing: -0.04em;
+  font-weight: 850;
+
+  letter-spacing: -0.05em;
 }
 
 .raahi-logo span {
-  color: var(--raahi-primary);
+  color: #111111;
+}
+
+.raahi-logo-mark {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 32px;
+
+  height: 32px;
+
+  margin-right: 7px;
+
+  border-radius: 10px;
+
+  background: var(--raahi-primary);
+
+  color: #000000;
+
+  font-size: 15px;
+
+  font-weight: 900;
+
+  box-shadow: 0 5px 15px rgba(200, 255, 0, 0.18);
 }
 
 /* =========================================================
-   29. MOBILE BOTTOM SHEET
+   ICON BUTTON
+   ========================================================= */
+
+.raahi-icon-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 40px;
+
+  height: 40px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  color: #111111;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.raahi-icon-btn:hover {
+  background: #ffffff;
+
+  border-color: rgba(0, 0, 0, 0.16);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   GLASS UTILITIES
+   ========================================================= */
+
+.raahi-glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.78),
+    rgba(255, 255, 255, 0.48)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  box-shadow: var(--glass-shadow);
+}
+
+.raahi-glass-dark {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 15, 0.9),
+    rgba(5, 5, 5, 0.76)
+  );
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+.raahi-glass-light {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.94),
+    rgba(255, 255, 255, 0.68)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+/* =========================================================
+   PRIMARY GLOW
+   ========================================================= */
+
+.raahi-primary-glow {
+  box-shadow:
+    0 0 0 1px rgba(200, 255, 0, 0.08),
+    0 10px 35px rgba(200, 255, 0, 0.12);
+}
+
+/* =========================================================
+   GLASS DIVIDER
+   ========================================================= */
+
+.raahi-glass-divider {
+  width: 100%;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.12),
+    transparent
+  );
+}
+
+/* =========================================================
+   BOOKING PANEL
+   ========================================================= */
+
+.raahi-booking-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.72)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+
+  border-radius: var(--radius-2xl);
+
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================================
+   RIDE PRICE
+   ========================================================= */
+
+.raahi-ride-price {
+  font-size: 18px;
+
+  font-weight: 750;
+
+  color: #111111;
+}
+
+.raahi-ride-price span {
+  font-size: 12px;
+
+  font-weight: 500;
+
+  color: #777777;
+}
+
+/* =========================================================
+   LOCATION DOTS
+   ========================================================= */
+
+.raahi-location-dot {
+  width: 10px;
+
+  height: 10px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #111111;
+
+  border: 2px solid #ffffff;
+
+  box-shadow: 0 0 0 1px #111111;
+}
+
+.raahi-location-dot.destination {
+  background: var(--raahi-primary);
+
+  box-shadow: 0 0 0 1px #7c9500;
+}
+
+/* =========================================================
+   SWITCH / TOGGLE
+   ========================================================= */
+
+.raahi-switch {
+  position: relative;
+
+  width: 46px;
+
+  height: 26px;
+
+  border-radius: 999px;
+
+  background: #d6d6d1;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  cursor: pointer;
+
+  transition: background var(--transition-normal);
+}
+
+.raahi-switch.active {
+  background: var(--raahi-primary);
+}
+
+.raahi-switch::after {
+  content: "";
+
+  position: absolute;
+
+  top: 3px;
+
+  left: 3px;
+
+  width: 18px;
+
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+
+  transition: transform var(--transition-normal);
+}
+
+.raahi-switch.active::after {
+  transform: translateX(20px);
+
+  background: #111111;
+}
+
+/* =========================================================
+   BOTTOM SHEET
    ========================================================= */
 
 .raahi-bottom-sheet {
-  background: #ffffff;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(245, 245, 242, 0.96)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
 
   border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
 
-  box-shadow: 0 -10px 30px rgb(16 24 40 / 10%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.14);
 }
 
 /* =========================================================
-   30. UTILITY CLASSES
+   BOTTOM SHEET HANDLE
+   ========================================================= */
+
+.raahi-bottom-sheet-handle {
+  width: 42px;
+
+  height: 4px;
+
+  margin: 10px auto;
+
+  border-radius: 999px;
+
+  background: #c4c4bf;
+}
+
+/* =========================================================
+   PAGE
    ========================================================= */
 
 .raahi-surface {
@@ -993,7 +1537,15 @@ ol {
 
 .raahi-page {
   min-height: 100vh;
-  background: var(--raahi-background);
+
+  background:
+    radial-gradient(
+      circle at 10% 5%,
+      rgba(200, 255, 0, 0.045),
+      transparent 25%
+    ),
+    radial-gradient(circle at 90% 95%, rgba(0, 0, 0, 0.04), transparent 28%),
+    var(--raahi-background);
 }
 
 .raahi-muted {
@@ -1005,12 +1557,63 @@ ol {
 }
 
 .raahi-primary-text {
-  color: var(--raahi-primary);
+  color: #111111;
+}
+
+.raahi-accent-text {
+  color: #718900;
 }
 
 /* =========================================================
-   31. RESPONSIVE
+   DARK SECTION
    ========================================================= */
+
+.raahi-dark-section {
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(200, 255, 0, 0.08),
+      transparent 25%
+    ),
+    #080808;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   DARK CARD
+   ========================================================= */
+
+.raahi-dark-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: var(--radius-xl);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 230px;
+  }
+
+  .raahi-page-title {
+    font-size: 27px;
+  }
+}
 
 @media (max-width: 768px) {
   .raahi-page-title {
@@ -1023,11 +1626,13 @@ ol {
 
   .raahi-map {
     min-height: 320px;
+
     border-radius: var(--radius-lg);
   }
 
   .raahi-map-panel {
     left: 12px;
+
     top: 12px;
 
     width: calc(100% - 24px);
@@ -1036,11 +1641,31 @@ ol {
   .raahi-btn {
     min-height: 46px;
   }
+
+  .raahi-sidebar {
+    width: 100%;
+  }
+
+  .raahi-card {
+    border-radius: var(--radius-lg);
+  }
+
+  .raahi-booking-panel {
+    border-radius: var(--radius-xl);
+  }
 }
 
 @media (max-width: 480px) {
   body {
     font-size: 13px;
+  }
+
+  .raahi-page-title {
+    font-size: 21px;
+  }
+
+  .raahi-section-title {
+    font-size: 17px;
   }
 
   .raahi-card {
@@ -1050,10 +1675,18 @@ ol {
   .raahi-modal {
     width: calc(100% - 20px);
   }
+
+  .raahi-location-input {
+    min-height: 52px;
+  }
+
+  .raahi-bottom-sheet {
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  }
 }
 
 /* =========================================================
-   32. REDUCED MOTION
+   REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1061,8 +1694,11 @@ ol {
   *::before,
   *::after {
     scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+
     transition-duration: 0.01ms !important;
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
   }
 }

@@ -1,16 +1,17 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { signOut } from "next-auth/react";
-import { LogOut } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
-export interface UserMenuItem {
+export type UserMenuItem = {
   label: string;
-  href: string;
+  href?: string;
   icon: LucideIcon;
-}
+  onClick?: () => void;
+};
 
 interface UserMenuPopoverProps {
   name?: string | null;
@@ -22,84 +23,142 @@ interface UserMenuPopoverProps {
 export default function UserMenuPopover({
   name,
   email,
-
+  image,
   items,
 }: UserMenuPopoverProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    function handleOutsideClick(event: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    }
-
-    function handleEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") setIsOpen(false);
-    }
-
-    document.addEventListener("mousedown", handleOutsideClick);
-    document.addEventListener("keydown", handleEscape);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-      document.removeEventListener("keydown", handleEscape);
-    };
-  }, []);
+  const firstLetter = name?.trim()?.charAt(0)?.toUpperCase() || "U";
 
   return (
-    <div ref={menuRef} className="relative">
+    <div className="relative">
       <button
         type="button"
-        onClick={() => setIsOpen((previous) => !previous)}
+        onClick={() => setIsOpen((prev) => !prev)}
         aria-label="Open user menu"
         aria-expanded={isOpen}
-        className="flex h-11 items-center gap-2 rounded-full border border-zinc-200 bg-white p-1.5 pr-3 transition hover:border-violet-300 hover:bg-violet-50"
+        className="relative flex h-11 w-11 items-center justify-center overflow-visible rounded-full border-2 border-[#C8FF00] bg-black text-sm font-extrabold uppercase text-[#C8FF00] shadow-[0_0_0_3px_rgba(200,255,0,0.12)] transition-all duration-200 hover:scale-105"
       >
-        <div className="space-y-3">
-          <div className="flex items-center gap-3 rounded-xl bg-violet-50 p-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-violet-100 text-sm font-bold uppercase text-[#6D28D9]">
-              {name?.trim()?.charAt(0) || "U"}
-            </div>
-          </div>
+        <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-full">
+          {image ? (
+            <Image
+              src={image}
+              alt={name || "User"}
+              width={44}
+              height={44}
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            firstLetter
+          )}
         </div>
+
+        <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white bg-[#C8FF00]" />
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-full z-[80] mt-3 w-64 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-xl">
-          <div className="border-b border-zinc-100 px-4 py-4">
-            <p className="truncate text-sm font-bold text-zinc-900">
-              {name || "User"}
-            </p>
-            <p className="mt-1 truncate text-xs text-zinc-500">{email}</p>
-          </div>
+        <>
+          <button
+            type="button"
+            aria-label="Close user menu"
+            onClick={() => setIsOpen(false)}
+            className="fixed inset-0 z-40 cursor-default"
+          />
 
-          <nav className="p-2">
-            {items.map(({ label, href, icon: Icon }) => (
-              <Link
-                key={`${label}-${href}`}
-                href={href}
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-violet-50 hover:text-[#6D28D9]"
-              >
-                <Icon size={18} />
-                {label}
-              </Link>
-            ))}
-          </nav>
+          <div className="absolute right-0 top-14 z-50 w-[290px] overflow-hidden rounded-[22px] border border-black/[0.08] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.14)]">
+            <div className="border-b border-black/[0.07] bg-[#F7F7F5] px-4 py-4">
+              <div className="flex items-center gap-3">
+                <div className="relative shrink-0">
+                  <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border-2 border-[#C8FF00] bg-black text-sm font-extrabold uppercase text-[#C8FF00]">
+                    {image ? (
+                      <Image
+                        src={image}
+                        alt={name || "User"}
+                        width={44}
+                        height={44}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      firstLetter
+                    )}
+                  </div>
 
-          <div className="border-t border-zinc-100 p-2">
-            <button
-              type="button"
-              onClick={() => signOut({ callbackUrl: "/" })}
-              className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-red-600 transition hover:bg-red-50"
-            >
-              <LogOut size={18} />
-              Logout
-            </button>
+                  <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white bg-[#C8FF00]" />
+                </div>
+
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-extrabold text-zinc-950">
+                    {name || "User"}
+                  </p>
+
+                  <p className="mt-0.5 truncate text-xs text-zinc-500">
+                    {email || ""}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-2">
+              {items.map((item) => {
+                const Icon = item.icon;
+
+                if (item.href) {
+                  return (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-semibold text-zinc-700 transition-all duration-200 hover:bg-black hover:text-white"
+                    >
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-zinc-100 text-zinc-700 transition-colors duration-200 group-hover:bg-[#C8FF00] group-hover:text-black">
+                        <Icon size={17} />
+                      </span>
+
+                      <span className="flex-1">{item.label}</span>
+
+                      <ChevronRight
+                        size={16}
+                        className="text-zinc-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-white"
+                      />
+                    </Link>
+                  );
+                }
+
+                return (
+                  <button
+                    key={item.label}
+                    type="button"
+                    onClick={() => {
+                      item.onClick?.();
+                      setIsOpen(false);
+                    }}
+                    className="group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm font-semibold text-zinc-700 transition-all duration-200 hover:bg-black hover:text-white"
+                  >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-zinc-100 text-zinc-700 transition-colors duration-200 group-hover:bg-[#C8FF00] group-hover:text-black">
+                      <Icon size={17} />
+                    </span>
+
+                    <span className="flex-1">{item.label}</span>
+
+                    <ChevronRight
+                      size={16}
+                      className="text-zinc-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-white"
+                    />
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="border-t border-black/[0.06] px-4 py-3">
+              <div className="flex items-center justify-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#C8FF00]" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-400">
+                  Your journey, your way
+                </span>
+              </div>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

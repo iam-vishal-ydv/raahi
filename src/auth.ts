@@ -25,8 +25,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
       authorize: async (credentials) => {
         await connectDb();
-
-        console.log(credentials);
         const email = credentials.email as string;
         const password = credentials.password as string;
 

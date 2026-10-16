@@ -26,12 +26,12 @@ export default function AuthInput({
 
   return (
     <div>
-      <label className="mb-1.5 block text-xs font-semibold text-zinc-700">
+      <label className="mb-2 block text-xs font-extrabold text-zinc-700">
         {label}
       </label>
 
-      <div className="relative">
-        <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400">
+      <div className="group relative">
+        <div className="absolute left-3.5 top-1/2 z-10 flex -translate-y-1/2 items-center justify-center text-zinc-400 transition-colors duration-200 group-focus-within:text-black">
           {icon}
         </div>
 
@@ -41,17 +41,23 @@ export default function AuthInput({
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          className={`h-10 w-full rounded-lg border border-zinc-200 bg-zinc-50 pl-10 text-sm outline-none transition placeholder:text-zinc-400 focus:border-[#6D28D9] focus:bg-white focus:ring-2 focus:ring-violet-100 ${
-            isPassword ? "pr-10" : "pr-3"
+          className={`h-12 w-full rounded-xl border border-zinc-200 bg-zinc-50/80 pl-11 text-sm font-medium text-zinc-900 outline-none transition-all duration-200 placeholder:text-zinc-400 hover:border-zinc-300 hover:bg-white focus:border-black focus:bg-white focus:ring-2 focus:ring-[#C8FF00]/40 ${
+            isPassword ? "pr-11" : "pr-3.5"
           }`}
         />
+
         {isPassword && (
           <button
             type="button"
             onClick={() => setShowPassword((prev) => !prev)}
-            className="absolute right-3.5 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-600"
+            aria-label={showPassword ? "Hide password" : "Show password"}
+            className="absolute right-3.5 top-1/2 flex -translate-y-1/2 items-center justify-center text-zinc-400 transition-colors duration-200 hover:text-black"
           >
-            {showPassword ? <EyeOff size={17} /> : <Eye size={17} />}
+            {showPassword ? (
+              <EyeOff size={17} strokeWidth={2} />
+            ) : (
+              <Eye size={17} strokeWidth={2} />
+            )}
           </button>
         )}
       </div>
